@@ -1,15 +1,26 @@
 package com.example.testgame;
 
+import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
 
 public class TestGame extends Activity {
+	
+	private GLSurfaceView 	view = null;
+	private testRenderer	renderer = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_test_game);
+		
+		view = new GLSurfaceView( this );
+		view.setRenderer( renderer );
+		
+		setContentView( view );
+		
+		
 	}
 
 	@Override
