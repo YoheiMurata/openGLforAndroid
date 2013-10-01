@@ -7,8 +7,8 @@ import android.view.Menu;
 
 public class TestGame extends Activity {
 	
-	private GLSurfaceView 	view = null;
-	private testRenderer	renderer = null;
+	private GLSurfaceView 	view 		= null;
+	private testRenderer	renderer 	= null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -16,10 +16,12 @@ public class TestGame extends Activity {
 		setContentView(R.layout.activity_test_game);
 		
 		view = new GLSurfaceView( this );
+		renderer = new testRenderer();
+		
 		view.setRenderer( renderer );
 		
-		setContentView( view );
 		
+		setContentView( view );
 		
 	}
 

@@ -13,16 +13,25 @@ public class WorldObject {
 	private boolean isFallable;
 	//反発係数
 	private double bound;
+	//摩擦係数
+	private double friction;
 	
 	//オブジェクトの場所
 	private double posX;
 	private double posY;
 	private double posZ;
 	
+	//オブジェクトの持つ速度
+	private double vx;
+	private double vy;
+	private double vz;
+	
 	//コンストラクタ
 	public WorldObject(){
-		isFallable 	= true;
-		bound 		= 0.0; 
+		setFallable( false );
+		setBound( 0 );
+		setPosition( 0, 0, 0 );
+		setFriction( 0 );
 	}
 	
 	public boolean getFallable(){
@@ -31,6 +40,44 @@ public class WorldObject {
 	
 	public void setFallable( boolean input ){
 		isFallable = input;
+	}
+	
+	public double getFriction(){
+		return friction;
+	}
+	
+	public void setFriction( double f ){
+		friction = f;
+	}
+	
+	public double getVx(){
+		return vx;
+	}
+	
+	public double getVy(){
+		return vy;
+	}
+	
+	public double getVz(){
+		return vz;
+	}
+	
+	public void setVx( double x ){
+		vx = x;
+	}
+	
+	public void setVy( double y ){
+		vy = y;
+	}
+	
+	public void setVz( double z ){
+		vz = z;
+	}
+	
+	public void setVelocity( double x, double y, double z ){
+		vx = x;
+		vy = y;
+		vz = z;
 	}
 	
 	public double getBound(){
