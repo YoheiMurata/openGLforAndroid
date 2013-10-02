@@ -14,7 +14,7 @@ public class Ball extends WorldObject {
 	//デフォルトの半径を設定
 	public static final double DEFAULT_RADIUS		= 0.3;
 	//デフォルトの頂点間の解像度
-	public static final double DEFAULT_STEPS		= 25;
+	public static final double DEFAULT_STEPS		= 5;
 	
 	private static final double rad					= Math.PI / 180;
 	
@@ -101,7 +101,7 @@ public class Ball extends WorldObject {
 		gl.glEnableClientState( GL10.GL_VERTEX_ARRAY );
 		gl.glVertexPointer( 3, GL10.GL_FLOAT, 0, sphereVertex );
 		gl.glColor4f( color_r, color_g, color_b, 1.0f );
-		gl.glDrawArrays( GL10.GL_LINES, 0, mPoints );
+		gl.glDrawArrays( GL10.GL_POINTS, 0, mPoints );
 //		Log.v(TAG_NAME, "color (R, G, B) = ("+color_r+", "+color_g+", "+color_b+")");
 //		Log.v(TAG_NAME, "position = ("+getPosX()+", "+getPosY()+", "+getPosZ()+")");
 		gl.glDisableClientState( GL10.GL_VERTEX_ARRAY );
